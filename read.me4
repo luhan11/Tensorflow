@@ -1,0 +1,22 @@
+Title:Keras卷积神经网络识别CIFAR-10图像
+目的：通过使用Keras建立卷积神经网络模型，并且训练模型以及评估模型准确率，然后使用训练完成的模型来识别CIFAR-10图像数据集．由于CIFAR-10图像数据的识别难度较高，因此尝试使用更多次的卷积与池化运算，以此来提高识别的准确率．
+主要使用的库和ＡＰＩ：
+from keras.datasets import cifar10       
+import numpy as np
+from keras.utils import np_utils
+from keras.models import Sequential                      
+from keras.layers import Dense,Dropout,Activation,Flatten
+from keras.layers import Conv2D,MaxPooling2D,ZeroPadding2D
+import matplotlib.pyplot as plt  
+import pandas as pd   
+其中所用函数：
+np_utils.to_categorical(y_Train)：将数字图像真实值OneHot Ecoding转换
+show_train_history(train_history,train,test)：用以显示训练过程
+model.evaluate (x_Test4D_normalize,y_TestOnehot)：估模型准确率
+plot_images_labels_prediction(images,labels,prediction,idx,num=10)：用以显示预测结果
+
+def plot_images_labels_prediction（）：
+定义此函数可以方便我们查看数字图形，真实的数字与预测结果．
+
+def show_train_history（）：
+定义此函数可以方便我们读取前面训练步骤中每个训练周期的准确率和误差．

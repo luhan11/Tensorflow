@@ -1,0 +1,15 @@
+Title:CIFAR-10图像识别数据集
+目的：前面学习了MNIST数据集中的手写数字，MNIST数字文字数据集数据量不会太多，而且是单色图像，较简单．此章学习CIFAR-10数据集，与MNIST数据集相比，它的色彩和颜色噪点较多，同一分类大小不一，角度不同，颜色不同，因此CIFAR-10图像识别的难度比MNIST数据集高．
+主要使用的库和ＡＰＩ：
+from keras.datasets import cifar10   
+import numpy as np
+import matplotlib.pyplot as plt 
+from keras.utils import np_utils
+其中所用函数：
+plot_images_labels_prediction(images,labels,prediction,idx,num=10)　：用以显示预测结果
+np_utils.to_categorical(y_train_label　)  　　　　　　　　　　　　　　：将数字真实值OneHot Encoding转化
+x_image_train.astype('float32')/255.0　　　　　　　　　　　　　　　　：将数字图像标准化　　　　　
+
+def plot_images_labels_prediction（）：
+定义此函数可以方便我们查看数字图形，真实的数字与预测结果．
+
